@@ -1,7 +1,18 @@
 Rails.application.routes.draw do
-  get 'portfolio/index'
-
+  
   get 'home/index'
+  root 'home#index'
+
+  match "/portfolio",
+  :to => "portfolio#index",
+  :via => :get
+
+
+  match "/portfolio/index",
+  :to => "portfolio#index",
+  :via => :get
+
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
